@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  color: #474747;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 2;
+  margin: 0;
+  overflow-x: hidden;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Camada do topo */
+.top-layer {
+    background-color: #f4f4f4;
+    color: #474747;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+/* Logo e pesquisa */
+.middle-layer {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 27px 20px;
+}
+
+.bottom-layer {
+    background-color: #3457BF;
+    margin-inline: 200px;
+    color: #fff;
+    padding: 10px 0; /* Reduzir o preenchimento vertical */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.bottom-layer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+}
+
+.bottom-layer li {
+    margin: 0 30px; /* Adicione margem entre as <li> */
+}
+
+.bottom-layer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Estilize o campo de pesquisa */
+input[type="text"] {
+    width: 100%;
+    font-family: 'Poppins';
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    flex-grow: 1; /* Faz com que o input ocupe o espaço disponível */
+    text-align: center;
+   
+}
+
+/* Estilize os ícones */
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icons i {
+    margin-right: 20px;
+    color: #555;
+}
+
+.infos, .frase, .logo {
+    margin-right: 20px;
+}
+
+span{
+    margin-right: 20px;
+}
+
+span i{
+    margin-right: 20px;
+}
+
+/* Seção de promoção */
+.promotion-section {
+    position: relative; /* Para posicionar o texto sobre a imagem */
+    text-align: left;
+    padding: 0 0;
+    opacity: 0; /* Inicialmente, a seção está invisível */
+    animation: fadeIn 1.5s forwards; /* Adiciona a animação de fade-in */
+}
+
+.promotion-section img {
+    width: 100%; /* Ajuste para ocupar 100% da largura do contêiner */
+    height: 800px;
+    object-fit: cover; /* Para manter as proporções e cortar a imagem, se necessário */
+    margin-bottom: 20px;
+}
+
+.promotion-section p,
+.promotion-section .news,
+.promotion-section .exclusives {
+    position: absolute; /* Para posicionar o texto sobre a imagem */
+    left: 20px; /* Ajuste a posição horizontal do texto conforme necessário */
+    transform: translateY(-50%); /* Centraliza verticalmente o texto com base no seu centro */
+    color: #fff; /* Cor do texto */
+}
+
+.promotion-section p {
+    top: 39%; /* Ajuste a posição vertical do texto conforme necessário */
+    font-size: 24px;
+}
+
+.promotion-section .news {
+    top: 45%; /* Ajuste a posição vertical do texto conforme necessário */
+    font-size: 58px;
+}
+
+.promotion-section .exclusives {
+    top: 50%; /* Ajuste a posição vertical do texto conforme necessário */
+    font-size: 80px;
+}
+
+/* Definição da animação */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Ao final da animação, a seção está totalmente visível */
+    }
+}
+
+.catalog-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.catalog-item {
+    position: relative;
+    overflow: hidden;
+    width: 400px; /* Ajuste a largura conforme necessário */
+}
+
+.catalog-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+.catalog-item:hover img {
+    transform: scale(1.1);
+}
+
+.catalog-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.catalog-item:hover .overlay {
+    opacity: 1;
+}
+
+.catalog-item h3, .catalog-item p {
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+    opacity: 1; /* Certifique-se de que o h3 já apareça por padrão */
+}
+
+.discount-seal {
+    position: absolute;
+    top: 10px; /* Ajuste a posição vertical conforme necessário */
+    right: 10px; /* Ajuste a posição horizontal conforme necessário */
+    background-color: #65BF95; /* Cor de fundo do selo */
+    color: #fff; /* Cor do texto do selo */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Produtos */
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    width: 300px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-out;
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product:hover {
+    transform: scale(1.1);
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product h4, .product h2, .product p {
+    margin: 0;
+    color: #000;
+}
+
+.section-title {
+    margin-top: 150px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #000;
+}
+
+.section-title h2 {
+    font-size: 18px;
+    margin-top: 3px;
+    color: #555; /* Cor do subtítulo */
+}
+
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    overflow: auto; /* Adicionado para permitir rolar a tela */
+}
+
+h2 {
+    text-align: center;
+    color: #000;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+form {
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.action-buttons a {
+    margin-right: 10px;
+    color: #333; /* Cor do ícone */
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .action-buttons a:hover {
+    color: #007BFF; /* Cor ao passar o mouse sobre o ícone */
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+
+
+
+
